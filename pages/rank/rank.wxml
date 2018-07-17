@@ -1,0 +1,47 @@
+<!--pages/rank/rank.wxml-->
+
+<import src="../footer/footer.wxml"/>
+<image class='backButton' src='https://54.gmair.net/material/back.png' bindtap="back"></image>
+<view class='rankTitle'>
+  <image src="https://54.gmair.net/material/rank.jpg"></image>
+</view>
+<view class="table">
+  <block wx:for="{{scoreVOS}}" wx:key="{{rank}}">
+    <view class="tr bg-g {{item.openId==self.openId? 'selfText':''}}" wx:if="{{index % 2 == 0}}">
+      <view class="td wd10">{{item.rank}}</view>
+      <view class="td wd50">
+        <image class='avatar' src="https://54.gmair.net/material/null_avatar.jpg"></image>
+        {{item.userName}}
+      </view>
+      <view class="td wd20">
+        <image class='avatar' src="https://54.gmair.net/material/kun1.jpg"></image>
+        {{item.score}}
+      </view>
+    </view>
+    <view class="tr bg-w {{item.openId==self.openId? 'selfText':''}}" wx:else>
+      <view class="td wd10">{{item.rank}}</view>
+      <view class="td wd50">
+        <image class='avatar' src="https://54.gmair.net/material/null_avatar.jpg"></image>
+        {{item.userName}}
+      </view>
+      <view class="td wd20">
+        <image class='avatar' src="https://54.gmair.net/material/kun1.jpg"></image>
+        {{item.score}}
+      </view>
+    </view>
+  </block>
+  <!--wx:if='{{canUse}}'-->
+  <view wx:if='{{canUse&&self}}' class="tr bg-g selfText selfRank">
+      <view class="td wd10">{{self.rank}}</view>
+      <view class="td wd50">
+        <image class='avatar' src="https://54.gmair.net/material/null_avatar.jpg"></image>
+        {{self.userName}}
+      </view>
+      <view class="td wd20">
+        <image class='avatar' src="https://54.gmair.net/material/kun1.jpg"></image>
+        {{self.score}}
+      </view>
+  </view>
+
+</view>
+<template is="footer" />

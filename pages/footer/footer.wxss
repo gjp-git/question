@@ -1,0 +1,17 @@
+/* pages/footer/footer.wxss */
+.footerPanel{
+  position: fixed;
+  height: 50rpx;
+  width: 100%;
+  bottom: 0;
+  background: whitesmoke;
+  opacity:0.8;
+}
+.footerText{
+  position:absolute;
+  left:50%;
+  top:5rpx;
+  font-size: 30rpx;
+  color: rgb(115,17,111);
+  transform: translateX(-50%);
+}

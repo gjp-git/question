@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/question/question",
+    "pages/rank/rank",
+    "pages/result/result",
+    "pages/footer/footer"
+  ],
+  "window": {
+    "navigationStyle": "custom"
+  }
+}

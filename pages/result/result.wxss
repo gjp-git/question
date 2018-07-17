@@ -1,0 +1,161 @@
+/* pages/result/result.wxss */
+@import "/pages/footer/footer.wxss";
+.center{
+  text-align:center;
+}
+.content{
+  margin-left: auto;
+  margin-right: auto;
+  width:500rpx;
+}
+.scoreLabel{
+  font-size: 100rpx;
+  width:500rpx;
+  margin:auto;
+  padding-top:150rpx;
+
+}
+.scoreText{
+  font-size: 300rpx;
+  width:500rpx;
+  margin:auto;
+  color: rgb(244,195,34);
+}
+.scoreImage{
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 720rpx;
+  height: 1000rpx;
+  z-index: -99;
+}
+.scorePanel{
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 720rpx;
+  height: 1000rpx;
+}
+.buttonType {
+  position:absolute;
+  width: 250rpx;
+  background-color: rgb(115,17,111);
+  color: white;
+  font-size: 30rpx;
+  border:  0px solid rgb(115,17,111);
+  top:1150rpx;
+  left:50%;
+  transform: translate(-50%)
+}
+
+.canvas-box{
+  width: 720rpx;
+  height: 1000rpx;
+  position: fixed;
+  left: 25rpx;
+  top: 150rpx;
+}
+
+/*button*/
+.btn { 
+ width: 80%; 
+ padding: 20rpx 0; 
+ border-radius: 10rpx; 
+ text-align: center; 
+ margin: 40rpx 10%; 
+ background: #000; 
+ color: #fff; 
+} 
+  
+/*mask*/
+.drawer_screen { 
+ width: 100%; 
+ height: 100%; 
+ position: fixed; 
+ top: 0; 
+ left: 0; 
+ z-index: 1000; 
+ background: #000; 
+ opacity: 0.5; 
+ overflow: hidden; 
+} 
+  
+/*content*/
+.drawer_box { 
+ width: 650rpx; 
+ overflow: hidden; 
+ position: fixed; 
+ top: 50%; 
+ left: 0; 
+ z-index: 1001; 
+ background: #FAFAFA; 
+ margin: -150px 50rpx 0 50rpx; 
+ border-radius: 3px; 
+} 
+  
+
+.btn_ok{ 
+ padding: 10px; 
+ font: 20px "microsoft yahei"; 
+ text-align: center; 
+ border-top: 1px solid #E8E8EA; 
+ color: #3CC51F; 
+} 
+
+.avatar{
+  height:100rpx;
+  width:100rpx;
+  border-radius: 50%
+}
+.arrow{
+  height:132rpx;
+  width:100rpx;
+}
+.rank{
+  width: 100rpx;
+  height: 100rpx;
+  margin-right:15rpx
+}
+.star{
+  height: 50rpx;
+  width:250rpx;
+  margin-bottom:25rpx
+}
+.score{
+  font-size: 50rpx;
+  color: red;
+  font-weight: bold;
+}
+
+.avatarPanel{
+  margin-top:80rpx; 
+  text-align: center;
+}
+
+.beforePanel{
+  margin-top:20rpx; 
+  text-align: center;
+}
+
+.arrowPanel{
+  margin-top:20rpx; 
+  text-align: center;
+}
+
+.afterPanel{ 
+  margin-top:20rpx; 
+  text-align: center;
+}
+.backButton{
+  position: absolute;
+  top:50rpx;
+  left:20rpx;
+  height:87rpx;
+  width:125rpx;
+}

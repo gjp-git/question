@@ -1,0 +1,23 @@
+.userGrade{
+  position:relative;
+  margin-left: 50rpx;
+  margin-bottom: 20rpx; 
+  margin-top: 50rpx;
+}
+.avatar{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.rank{
+  width: 100rpx;
+  height: 100rpx;
+  margin-left:15rpx
+}
+.star{
+  height: 50rpx;
+  width:250rpx;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}

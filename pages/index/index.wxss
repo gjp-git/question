@@ -1,0 +1,57 @@
+/**index.wxss**/
+@import "/pages/template/template.wxss";
+@import "/pages/footer/footer.wxss";
+.content{
+  margin: auto;
+}
+.learn{
+  font-weight:bold;
+  color: rgb(252,11,17);
+}
+.titlePanel{
+  font-size: 70rpx;
+  color: rgb(115,17,111);
+  text-align: center
+}
+.buttonType {
+  width: 500rpx;
+  background-color: rgb(115,17,111);
+  color: white;
+  margin-bottom:20rpx;
+  border:  0px solid rgb(115,17,111);
+}
+.indexImg{
+  width:600rpx;
+  height: 600rpx;
+  float: left; 
+  position: relative; 
+  transform: translateX(-50%);
+  left: 50%
+}
+.indexImg1{
+  width:720rpx;
+  height: 540rpx;
+}
+.logoPanel{
+  position: absolute;
+  bottom: 50rpx;
+  right: 50rpx;
+}
+.msgbox{
+  position: absolute;
+  bottom: 75rpx;
+  left: 50rpx;
+  height:64rpx;
+  width:100rpx;
+}
+
+.logo{
+  height:100rpx;
+  width:100rpx;
+  
+}
+
+.loadView{
+  margin-top: 200rpx;
+}
+

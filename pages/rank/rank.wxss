@@ -1,0 +1,77 @@
+/* pages/rank/rank.wxss */
+@import "/pages/footer/footer.wxss";
+.rankTitle{
+  height: 144rpx;
+  width: 100%;
+  margin-top:100rpx;
+}
+.rankTitle image{
+  position: absolute;
+  margin-top:0;
+  height: 144rpx;
+  width: 360rpx;
+  left: 50%;
+  transform: translate(-50%)
+}
+
+.selfRank{
+  margin-top: 100rpx;
+  bottom: 0;
+}
+
+.selfText{
+  color: yellow;
+  font-weight:bold;
+}
+
+.table {
+  margin-top:20rpx; 
+  width: 90%;
+  margin-left: 5%;
+  color: white
+}
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 3rem;
+  align-items: center;
+}
+.wd10{
+  width:10%;
+}
+.wd20{
+  width:20%;
+}
+.wd50{
+  width:50%;
+}
+.td {
+    justify-content: center;
+    text-align: center;
+    display:block;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    overflow:hidden;
+}
+.bg-w{
+  background: rgb(115,17,111);
+}
+.bg-g{
+  background: rgb(99, 6, 95);
+}
+
+.avatar{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  float: left
+}
+
+.backButton{
+  position: absolute;
+  top:50rpx;
+  left:20rpx;
+  height:87rpx;
+  width:125rpx;
+}
