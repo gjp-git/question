@@ -1,5 +1,7 @@
 <template name="footer">
   <view class='footerPanel'>
-    <text class='footerText'>南京大学团委出版</text>
+    <view class='footerText'>共青团南京大学委员会</view>
+    <view class='footerText'>南京大学习近平新时代中国特色社会主义思想青年学习社</view>
+    <view class='footerText'>南京大学马克思主义学院</view>
   </view>
 </template>

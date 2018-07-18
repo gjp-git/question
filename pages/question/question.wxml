@@ -16,12 +16,12 @@
     <text>{{(question.type=='Single')?'单选题':'多选题'}} -- 难度：{{question.difficulty=='easy'?'简单':(question.difficulty=='normal'?'中等':'困难')}}</text>
   </view>
   <view class='questionText'>
-    <text>{{question.questionDescription}}</text>
+    <text class='questionDesc'>{{question.questionDescription}}</text>
     <view wx:if="{{question.type=='Multiple'}}">
       <view class="radio" wx:for="{{question.choices}}" wx:key="value" >
         <label>
           <image wx:if="{{finishFlag}}" class='sign' src="{{item.flag =='choiceRed'?'https://54.gmair.net/material/false.png':(item.flag=='choiceGreen'?'https://54.gmair.net/material/true.png':'')}}"></image>
-          <button class=" {{item.selected}} choicesButton " bindtap="touchMultiple" id="{{item.value}}">{{item.value}}</button>
+          <button class=" {{item.selected}} choicesButton" bindtap="touchMultiple" id="{{item.value}}">{{item.value}}</button>
         </label>
       </view>
     </view>

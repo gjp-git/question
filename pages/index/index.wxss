@@ -21,8 +21,8 @@
   border:  0px solid rgb(115,17,111);
 }
 .indexImg{
-  width:600rpx;
-  height: 600rpx;
+  width:450rpx;
+  height: 450rpx;
   float: left; 
   position: relative; 
   transform: translateX(-50%);
@@ -34,12 +34,12 @@
 }
 .logoPanel{
   position: absolute;
-  bottom: 50rpx;
+  bottom: 165rpx;
   right: 50rpx;
 }
 .msgbox{
   position: absolute;
-  bottom: 75rpx;
+  bottom: 180rpx;
   left: 50rpx;
   height:64rpx;
   width:100rpx;
@@ -48,7 +48,6 @@
 .logo{
   height:100rpx;
   width:100rpx;
-  
 }
 
 .loadView{
