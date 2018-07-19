@@ -38,7 +38,7 @@
   <button wx:if="{{!finishFlag}}" class="buttonType" bindtap="submit">提交</button>
   <button wx:if="{{finishFlag}}" class="nextButtonType" bindtap="nextQuestion">下一题</button>
   <!--image class='result' wx:if="{{finishFlag}}" src="https://54.gmair.net/material/{{right?'zhengque':'cuowu'}}.png"></image-->
-  <view style='height:50rpx'></view>
+  <view style='height:100rpx'></view>
 </view>
 
 <view class='imgLoading'>

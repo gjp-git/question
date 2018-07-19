@@ -4,7 +4,8 @@
     "pages/question/question",
     "pages/rank/rank",
     "pages/result/result",
-    "pages/footer/footer"
+    "pages/footer/footer",
+    "pages/introduce/introduce"
   ],
   "window": {
     "navigationStyle": "custom"

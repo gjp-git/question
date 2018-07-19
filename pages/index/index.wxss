@@ -53,4 +53,17 @@
 .loadView{
   margin-top: 200rpx;
 }
-
+.introduceText{
+  margin-top:25rpx;
+  font-size: 35rpx;
+  color:rgb(115,17,111);
+  width: 100%;
+  text-align: center
+}
+.infoText{
+  margin-top:10rpx;
+  font-size: 28rpx;
+  color: gray;
+  width: 100%;
+  text-align: center
+}

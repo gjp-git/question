@@ -79,6 +79,11 @@ Page({
       hasUserInfo: true
     })
   },
+  getIntroduce: function () {
+    wx.navigateTo({
+      url: '../introduce/introduce'
+    })
+  },
   dealData: function (questions) {
     console.log(questions)
     console.log(questions[0].choices)

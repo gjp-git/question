@@ -15,7 +15,13 @@
     
     <view>
       <button wx:if='{{canUse}}' class="buttonType" bindtap="goToQuestion"> 答题挑战 </button>
-      <button class="buttonType" open-type="getUserInfo" wx:if='{{!canUse}}' lang="zh_CN" bindgetuserinfo="onGotUserInfo">点击授权</button>
+      <button class="buttonType" open-type="getUserInfo" wx:if='{{!canUse}}' lang="zh_CN" bindgetuserinfo="onGotUserInfo">开始学习</button>
+      <view class="introduceText" bindtap="getIntroduce">
+        <text wx:if='{{!canUse}}' >《用户规则说明》</text>
+      </view>
+      <view class="infoText">
+        <text wx:if='{{!canUse}}'>点击“开始学习”将默认您已阅读并知晓该《用户规则说明》</text>
+      </view>
       <button wx:if='{{canUse}}' class="buttonType" bindtap="goToRank"> 金榜题名 </button>
     </view>
     <view class='logoPanel'>
@@ -28,7 +34,7 @@
 
   <image wx:if='{{beRewarded}}' class='msgbox' src="https://54.gmair.net/material/msgbox.png" bindtap="modalShow"></image>
   <modal class="modal" hidden="{{!modalFlag}}" no-cancel bindconfirm="modalOk" confirmText="我知道了">
-    <view class="vedw">恭喜您获得获得答题周奖励，请前往大活XXX，凭领取精美礼品。</view>
+    <view class="vedw">恭喜您获得获得答题周奖励，请前往南京大学大学生活动中心607室，领取精美礼品。</view>
   </modal>
 </view>
 <view wx:if='{{!viewShow}}'>

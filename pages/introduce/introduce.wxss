@@ -1,0 +1,20 @@
+/* pages/introduce/introduce.wxss */
+.title{
+  margin-top:100rpx;
+  width: 100%;
+  text-align: center;
+  color:rgb(115,17,111);
+}
+.introduce{
+  width:80%;
+  font-size: 28rpx;
+  margin-left:10%;
+  margin-bottom: 50rpx;
+}
+.buttonType {
+  width: 500rpx;
+  background-color: rgb(115,17,111);
+  color: white;
+  margin-bottom:100rpx;
+  border:  0px solid rgb(115,17,111);
+}
