@@ -15,6 +15,7 @@ Page({
     lastStar:1,
     userRank: 1,
     userStar: 1,
+    fish: ['宝宝', '少年', '青春', '励志', '榜样']
   },
 
   /**
@@ -96,7 +97,7 @@ Page({
   onShareAppMessage: function () {
 
     return {
-      title: this.data.userInfo.nickName + '邀你参加答题挑战~',
+      title: this.data.userInfo.nickName + '邀你参加学习新思想答题挑战！',
       imageUrl: this.data.tempFilePath,
       path: '/pages/index/index',
       success: function (res) {
@@ -160,14 +161,18 @@ Page({
 
     //绘制第一段文本
     ctx.setFillStyle('#ff0000')
-    ctx.setFontSize(0.06 * windowWidth)
+    ctx.setFontSize(0.05 * windowWidth)
     ctx.setTextAlign('center')
-    ctx.fillText(hostNickname + ' 在挑战中得到 ' + that.data.score + ' 分', windowWidth / 2, 0.6* windowWidth)
+    ctx.fillText(hostNickname + '在学习新思想答题挑战中', windowWidth / 2, 0.55* windowWidth)
+    ctx.setFillStyle('#ff0000')
+    ctx.setFontSize(0.05 * windowWidth)
+    ctx.setTextAlign('center')
+    ctx.fillText('成长为' + this.data.fish[app.globalData.userRank-1] + '小蓝鲸', windowWidth / 2, 0.65 * windowWidth)
     //绘制第二段文本
     ctx.setFillStyle('#ff0000')
-    ctx.setFontSize(0.06 * windowWidth)
+    ctx.setFontSize(0.05 * windowWidth)
     ctx.setTextAlign('center')
-    ctx.fillText('邀请你一起来挑战啦~', windowWidth / 2, 0.7 * windowWidth)
+    ctx.fillText('快来解锁你的小蓝鲸吧！', windowWidth / 2, 0.75 * windowWidth)
     ctx.draw();
     console.log('draw')
   },
