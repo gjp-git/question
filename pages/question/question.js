@@ -12,7 +12,7 @@ function countdown(that) {
   if ((total_micro_second <= 0 || 0) && that.data.index < that.data.questions.length) {
     that.setData({
       finishFlag: true,
-      timerUrl: '../image/timer1.png',
+      timerUrl: that.data.imgs['timer1'],
       right: false
     });
     var question = that.data.question
@@ -79,7 +79,7 @@ function countdown(that) {
     total_micro_second -= 125
     timerImgIndex = ++timerImgIndex % 8 +1
     that.setData({
-      timerUrl: '../image/timer' + timerImgIndex + '.png'
+      timerUrl: that.data.imgs['timer' + timerImgIndex]
     })
     countdown(that)
   }
@@ -113,13 +113,15 @@ Page({
     finishFlag: false,
     selected:'',
     right: false,
-    timerUrl:'../image/timer1.png',
+    timerUrl: app.globalData.imgs['timer1'],
     item: {
-      avatar: 'https://54.gmair.net/material/null_avatar.jpg',
-      userRank: 1,
-      userStar: 3,
-      canUse: false
-    }
+      avatar: app.globalData.imgs['null'],
+      userRank: '',
+      userStar: '',
+      canUse: false,
+      imgs: app.globalData.imgs
+    },
+    imgs: app.globalData.imgs
   },
 
   /**
@@ -131,7 +133,8 @@ Page({
         avatar: app.globalData.userInfo.avatarUrl ? app.globalData.userInfo.avatarUrl : this.data.item.avatar,
         userRank: app.globalData.userRank,
         userStar: app.globalData.userStar,
-        canUse: app.globalData.canUse        
+        canUse: app.globalData.canUse,
+        imgs: app.globalData.imgs        
       },
       questions: app.globalData.questions,
       question: app.globalData.questions[0]

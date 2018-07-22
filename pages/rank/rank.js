@@ -9,7 +9,8 @@ Page({
   data: {
     scoreVOS: app.globalData.rank.scoreVOS,
     self: app.globalData.rank.self,
-    canUse: false
+    canUse: false,
+    imgs: app.globalData.imgs
   },
 
   /**

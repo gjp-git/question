@@ -4,9 +4,13 @@
 .content{
   margin: auto;
 }
-.learn{
-  font-weight:bold;
-  color: rgb(252,11,17);
+.studyImg{
+  width:164rpx;
+  height:93rpx;
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+  position: relative;
+  top:12rpx;
 }
 .titlePanel{
   font-size: 70rpx;

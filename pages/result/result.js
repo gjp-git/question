@@ -15,7 +15,8 @@ Page({
     lastStar:1,
     userRank: 1,
     userStar: 1,
-    fish: ['宝宝', '少年', '青春', '励志', '榜样']
+    fish: ['宝宝', '少年', '青春', '励志', '榜样'],
+    imgs: app.globalData.imgs
   },
 
   /**
@@ -132,11 +133,11 @@ Page({
     var bgPath = "../image/score.png"
     var portraitPath = that.data.portrait_temp
     var hostNickname = app.globalData.userInfo.nickName
-    var beforeRankPath = 'https://54.gmair.net/material/kun'+that.data.lastRank +'.jpg'
-    var afterRankPath = 'https://54.gmair.net/material/kun' + that.data.userRank +'.jpg'
-    var arrow = 'https://54.gmair.net/material/arrow.png'
-    var beforeStarPath = 'https://54.gmair.net/material/'+ that.data.lastStar +'star.png'
-    var afterStarPath = 'https://54.gmair.net/material/'+ that.data.userStar +'star.png'
+    var beforeRankPath = that.data.imgs['kun' + that.data.lastRank]
+    var afterRankPath = that.data.imgs['kun' + that.data.userRank]
+    var arrow = that.data.imgs['arrow']
+    var beforeStarPath = that.data.imgs[that.data.lastStar+'star']
+    var afterStarPath = that.data.imgs[that.data.userStar + 'star']
     var windowWidth = that.data.windowWidth - 20
     var windowHeight = that.data.windowHeight
     var scale = that.data.scale

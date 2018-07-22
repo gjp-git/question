@@ -7,18 +7,20 @@ Page({
     viewShow:false,
     userInfo: {},
     item:{
-      avatar:'https://54.gmair.net/material/null_avatar.jpg',
+      avatar: app.globalData.imgs["null"],
       userRank: '',
       userStar: '',
-      canUse: false
+      canUse: false,
+      imgs: app.globalData.imgs
     },
+    imgs: app.globalData.imgs,
     canUse: false,
     beRewarded:false,
     modalFlag:false
   },
   
   onLoad: function () {
-    console.log('onLoad')
+    //console.log('onLoad')
     if (app.globalData.openId && app.globalData.openId != '') {
       console.log('onLoad1')
       console.log(app.globalData.openId)
@@ -35,41 +37,7 @@ Page({
         })
       }
     }
-    console.log(app.globalData.openId)
-    console.log('onLoad4')
-    /*
-    console.log('onLoad')
-    if (app.globalData.userInfo) {
-      console.log('onLoadif')
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        item: {
-          avatar: app.globalData.userInfo.avatarUrl ? app.globalData.userInfo.avatarUrl : this.data.item.avatar,
-          userRank: app.globalData.userRank,
-          userStar: app.globalData.userStar,
-          canUse: app.globalData.canUse
-        },
-        canUse: app.globalData.canUse,
-        beRewarded: app.globalData.beRewarded
-      })
-    }else {
-      console.log('onLoadelse')
-      app.userInfoReadyCallback = res => {
-        console.log('onLoad1')
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true,
-          item: {
-            avatar: app.globalData.userInfo.avatarUrl ? app.globalData.userInfo.avatarUrl : this.data.item.avatar,
-            userRank: app.globalData.userRank,
-            userStar: app.globalData.userStar,
-            canUse: app.globalData.canUse
-          },
-          canUse: app.globalData.canUse,
-          beRewarded: app.globalData.beRewarded
-        })
-      }
-    }*/
+    
   },
   getUserInfo: function(e) {
     console.log(e)
@@ -116,14 +84,15 @@ Page({
       console.log(app.globalData.userInfo)
       this.getRankStar()
       this.getReward()
-      console.log(this.data)
+      //console.log(this.data)
       this.setData({
         userInfo: app.globalData.userInfo,
         item: {
           avatar: app.globalData.userInfo.avatarUrl ? app.globalData.userInfo.avatarUrl : this.data.item.avatar,
           userRank: app.globalData.userRank,
           userStar: app.globalData.userStar,
-          canUse: app.globalData.canUse
+          canUse: app.globalData.canUse,
+          imgs: app.globalData.imgs
         },
         canUse: app.globalData.canUse,
         beRewarded: app.globalData.beRewarded
@@ -175,9 +144,12 @@ Page({
           //app.globalData.userRank = res.data.resultMsg.userRank
           app.globalData.userStar = res.data.resultMsg.star
           that.setData({
-            item: {           
+            item: {
+              avatar: app.globalData.userInfo.avatarUrl ? app.globalData.userInfo.avatarUrl : this.data.item.avatar,           
               userRank: app.globalData.userRank,
               userStar: app.globalData.userStar,
+              canUse: app.globalData.canUse,
+              imgs: app.globalData.imgs
             },
           })
           console.log(app.globalData.userRank + ' ' + app.globalData.userStar)

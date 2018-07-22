@@ -1,7 +1,7 @@
 <template name="userRank">
   <view  class='userGrade'>
     <image class='avatar' src="{{avatar}}"></image>
-    <image wx:if='{{canUse}}' wx:if="{{userRank!=''}}" class='rank' src="https://54.gmair.net/material/kun{{userRank}}.jpg"></image>
-    <image wx:if='{{canUse}}' wx:if="{{userRank!=''}}" class='star' src="https://54.gmair.net/material/{{userStar}}star.png"></image>
+    <image wx:if='{{canUse}}' wx:if="{{userRank!=''}}" class='rank' src="{{imgs['kun'+userRank]}}"></image>
+    <image wx:if='{{canUse}}' wx:if="{{userRank!=''}}" class='star' src="{{imgs[userStar+'star']}}"></image>
   </view>
 </template>

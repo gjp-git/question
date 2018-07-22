@@ -20,7 +20,7 @@
     <view wx:if="{{question.type=='Multiple'}}">
       <view class="radio" wx:for="{{question.choices}}" wx:key="value" >
         <label>
-          <image wx:if="{{finishFlag}}" class='sign' src="{{item.flag =='choiceRed'?'https://54.gmair.net/material/false.png':(item.flag=='choiceGreen'?'https://54.gmair.net/material/true.png':'')}}"></image>
+          <image wx:if="{{finishFlag}}" class='sign' src="{{item.flag =='choiceRed'?imgs['false']:(item.flag=='choiceGreen'?imgs['true']:'')}}"></image>
           <button class=" {{item.selected}} choicesButton" bindtap="touchMultiple" id="{{item.value}}">{{item.value}}</button>
         </label>
       </view>
@@ -28,7 +28,7 @@
     <view wx:elif="{{question.type=='Single'}}">
       <view class="radio" wx:for="{{question.choices}}" wx:key="value">
         <label>
-          <image wx:if="{{finishFlag}}" class='sign' src="{{item.flag =='choiceRed'?'https://54.gmair.net/material/false.png':(item.flag=='choiceGreen'?'https://54.gmair.net/material/true.png':'')}}"></image>
+          <image wx:if="{{finishFlag}}" class='sign' src="{{item.flag =='choiceRed'?imgs['false']:(item.flag=='choiceGreen'?imgs['true']:'')}}"></image>
           <button class=" {{item.selected}} choicesButton " bindtap="touchSingle" id="{{item.value}}">{{item.value}}</button>
         </label>
       </view>
@@ -38,17 +38,7 @@
   <button wx:if="{{!finishFlag}}" class="buttonType" bindtap="submit">提交</button>
   <button wx:if="{{finishFlag}}" class="nextButtonType" bindtap="nextQuestion">下一题</button>
   <!--image class='result' wx:if="{{finishFlag}}" src="https://54.gmair.net/material/{{right?'zhengque':'cuowu'}}.png"></image-->
-  <view style='height:100rpx'></view>
+  <view style='height:135rpx'></view>
 </view>
 
-<view class='imgLoading'>
-  <image src="../image/timer1.png"></image>
-  <image src="../image/timer2.png"></image>
-  <image src="../image/timer3.png"></image>
-  <image src="../image/timer4.png"></image>
-  <image src="../image/timer5.png"></image>
-  <image src="../image/timer6.png"></image>
-  <image src="../image/timer7.png"></image>
-  <image src="../image/timer8.png"></image>
-</view>
 <template is="footer" />
