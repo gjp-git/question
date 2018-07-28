@@ -1,6 +1,6 @@
 <!--pages/rank/rank.wxml-->
 
-<import src="../footer/footer.wxml"/>
+<import src="../footer/footer.wxml" />
 <image class='backButton' src="{{imgs['back']}}" bindtap="back"></image>
 <view class='rankTitle'>
   <image src="{{imgs['rank']}}"></image>
@@ -31,7 +31,12 @@
     </view>
   </block>
   <!--wx:if='{{canUse}}'-->
-  <view wx:if='{{canUse&&self}}' class="tr bg-g selfText selfRank">
+
+  <view class="selfRank">
+    <view class="selfTitle">
+      <text>你的名字</text>
+    </view>
+    <view wx:if='{{canUse&&self}}' class="tr bg-g selfText">
       <view class="td wd10">{{self.rank}}</view>
       <view class="td wd50">
         <image class='avatar' src="{{imgs['null']}}"></image>
@@ -41,7 +46,7 @@
         <image class='avatar' src="{{imgs['kun1']}}"></image>
         {{self.score}}
       </view>
+    </view>
   </view>
-
 </view>
 <template is="footer" />

@@ -121,6 +121,7 @@ Page({
       canUse: false,
       imgs: app.globalData.imgs
     },
+    submit: false,
     imgs: app.globalData.imgs
   },
 
@@ -283,6 +284,8 @@ Page({
   }, 
   submit: function () {
     total_micro_second = 0
-    
+    this.setData({
+      submit : true
+    })
   }
 })

@@ -9,7 +9,7 @@
     <image class='timer' src="{{timerUrl}}"></image>
     <view class='timerText'>  
       <text wx:if="{{!finishFlag}}" style="display: block;">Remaining Time: {{clock+1}}s</text>
-      <text wx:if="{{finishFlag}}" style="display: block;">Time Out</text>
+      <text wx:if="{{finishFlag&&!submit}}" style="display: block;">Time Out</text>
     </view>
   </view>
   <view class='typeText'>

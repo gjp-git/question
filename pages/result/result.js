@@ -164,11 +164,11 @@ Page({
     ctx.setFillStyle('#ff0000')
     ctx.setFontSize(0.05 * windowWidth)
     ctx.setTextAlign('center')
-    ctx.fillText(hostNickname + '在学习新思想答题挑战中', windowWidth / 2, 0.55* windowWidth)
+    ctx.fillText(hostNickname + ' 在学习新思想答题挑战中', windowWidth / 2, 0.55* windowWidth)
     ctx.setFillStyle('#ff0000')
     ctx.setFontSize(0.05 * windowWidth)
     ctx.setTextAlign('center')
-    ctx.fillText('成长为' + this.data.fish[app.globalData.userRank-1] + '小蓝鲸', windowWidth / 2, 0.65 * windowWidth)
+    ctx.fillText('成长为 ' + this.data.fish[app.globalData.userRank-1] + '小蓝鲸', windowWidth / 2, 0.65 * windowWidth)
     //绘制第二段文本
     ctx.setFillStyle('#ff0000')
     ctx.setFontSize(0.05 * windowWidth)
