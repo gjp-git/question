@@ -3,40 +3,41 @@
 <import src="../footer/footer.wxml" />
 <image class='backButton' src="{{imgs['back']}}" bindtap="back"></image>
 <view class='rankTitle'>
-  <image src="{{imgs['rank']}}"></image>
+  <image mode="widthFix" src="{{imgs['rank']}}"></image>
 </view>
-<view class="table">
-  <block wx:for="{{scoreVOS}}" wx:key="{{rank}}">
-    <view class="tr bg-g {{item.openId==self.openId? 'selfText':''}}" wx:if="{{index % 2 == 0}}">
-      <view class="td wd10">{{item.rank}}</view>
-      <view class="td wd50">
-        <image class='avatar' src="{{imgs['null']}}"></image>
-        {{item.userName}}
+<view class="rankPanel">
+  <scroll-view class="table" scroll-y="true">
+    <block wx:for="{{scoreVOS}}" wx:key="{{rank}}">
+      <view class="tr {{index==scoreVOS.length-1?'bg-last':'bg'}} {{item.openId==self.openId? 'selfText':''}}" wx:if="{{index % 2 == 0}}">
+        <view class="td wd10">{{item.rank}}</view>
+        <view class="td wd50">
+          <image class='avatar' src="{{imgs['null']}}"></image>
+          {{item.userName}}
+        </view>
+        <view class="td wd20">
+          <image class='avatar' src="{{imgs['kun1']}}"></image>
+          {{item.score}}
+        </view>
       </view>
-      <view class="td wd20">
-        <image class='avatar' src="{{imgs['kun1']}}"></image>
-        {{item.score}}
+      <view class="tr {{index==scoreVOS.length-1?'bg-last':'bg'}} {{item.openId==self.openId? 'selfText':''}}" wx:else>
+        <view class="td wd10">{{item.rank}}</view>
+        <view class="td wd50">
+          <image class='avatar' src="{{imgs['null']}}"></image>
+          {{item.userName}}
+        </view>
+        <view class="td wd20">
+          <image class='avatar' src="{{imgs['kun1']}}"></image>
+          {{item.score}}
+        </view>
       </view>
-    </view>
-    <view class="tr bg-w {{item.openId==self.openId? 'selfText':''}}" wx:else>
-      <view class="td wd10">{{item.rank}}</view>
-      <view class="td wd50">
-        <image class='avatar' src="{{imgs['null']}}"></image>
-        {{item.userName}}
-      </view>
-      <view class="td wd20">
-        <image class='avatar' src="{{imgs['kun1']}}"></image>
-        {{item.score}}
-      </view>
-    </view>
-  </block>
-  <!--wx:if='{{canUse}}'-->
-
+    </block>
+    <!--wx:if='{{canUse}}'-->
+  </scroll-view>
   <view class="selfRank">
     <view class="selfTitle">
       <text>你的名字</text>
     </view>
-    <view wx:if='{{canUse&&self}}' class="tr bg-g selfText">
+    <view wx:if='{{canUse&&self}}' class="tr bg selfText">
       <view class="td wd10">{{self.rank}}</view>
       <view class="td wd50">
         <image class='avatar' src="{{imgs['null']}}"></image>

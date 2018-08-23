@@ -1,33 +1,36 @@
 <!--index.wxml-->
 <import src="../template/template.wxml" />
-<import src="../footer/footer.wxml"/>
+<import src="../footer/footer.wxml" />
+
+<view>
+  <image class='background' mode="widthFix" src="{{imgs['background']}}"></image>
+</view>
+
 <view wx:if='{{viewShow}}'>
   <view class="userinfo">
     <template is="userRank" data="{{...item}}" />
   </view>
-  <view class="container content">
+  <view class="content">
     <view class='titlePanel'>
-      <text>小蓝鲸</text>
-      <image class='studyImg' src="{{imgs['study']}}"></image>
-      <text>成长记</text>
+      <image class='titleImg' mode="widthFix" src="{{imgs['title']}}"></image>
     </view>
     <image class='indexImg' src="{{item.userRank?imgs['kun'+item.userRank]:imgs['kun1']}}"></image>
-    
+
     <view>
       <button wx:if='{{canUse}}' class="buttonType" bindtap="goToQuestion"> 答题挑战 </button>
       <button class="buttonType" open-type="getUserInfo" wx:if='{{!canUse}}' lang="zh_CN" bindgetuserinfo="onGotUserInfo">开始学习</button>
       <view class="introduceText" bindtap="getIntroduce">
-        <text wx:if='{{!canUse}}' >《用户规则说明》</text>
+        <text wx:if='{{!canUse}}'>《用户规则说明》</text>
       </view>
       <view class="infoText">
         <text wx:if='{{!canUse}}'>点击“开始学习”将默认您已阅读并知晓该《用户规则说明》</text>
       </view>
       <button wx:if='{{canUse}}' class="buttonType" bindtap="goToRank"> 金榜题名 </button>
     </view>
-    <view class='logoPanel'>
+    <!--view class='logoPanel'>
       <image class='logo' src="{{imgs['tuan']}}"></image>
       <image class='logo' src="{{imgs['xiao']}}"></image>
-    </view>
+    </view-->
   </view>
 
 
@@ -39,13 +42,13 @@
 </view>
 <view wx:if='{{!viewShow}}'>
   <view class="loadView">
+
     <view class='titlePanel'>
-      <text>小蓝鲸</text>
-      <image class='studyImg' src="{{imgs['study']}}"></image>
-      <text>成长记</text>
+      <image class='titleImg' mode="widthFix" src="{{imgs['title']}}"></image>
     </view>
-    <image class='indexImg1' src="{{imgs['index']}}"></image>
-    <view class='titlePanel'>
+    <image class='indexImg' src="{{imgs['kun1']}}"></image>
+
+    <view class='loadPanel'>
       <text>Loading...</text>
     </view>
   </view>

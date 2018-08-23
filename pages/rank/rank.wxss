@@ -1,48 +1,56 @@
 /* pages/rank/rank.wxss */
 @import "/pages/footer/footer.wxss";
+page{
+  background-color: rgb(108,34,105);
+}
 .rankTitle{
-  height: 144rpx;
-  width: 100%;
+  width: 80%;
   margin-top:100rpx;
 }
 .rankTitle image{
   position: absolute;
   margin-top:0;
-  height: 144rpx;
-  width: 360rpx;
+  width:80%;
   left: 50%;
-  transform: translate(-50%)
+  transform: translate(-50%);
+  z-index: -1
 }
 
 .selfRank{
-  position: fixed;
-  bottom: 200rpx;
-  width: 90%;
-  background: white;
+  position: flex;
   z-index: 999
 }
 
 .selfText{
-  color: yellow;
+  color: red;
   font-weight:bold;
 }
 .selfTitle{
+  position: relative;
   color: red;
-  margin-top: 50rpx;
+  margin-top: 20rpx;
+  left:20rpx;
   margin-bottom: 20rpx;
   font-weight:bold;
 }
+.rankPanel{
+  position: relative;
+  top:240rpx; 
+  width: 80%;
+  margin-left: 10%;
+  font-weight:bold;
+  color: rgb(108,34,105);
+  font-size: 30rpx;
+  white-space: nowrap;    
+}
 .table {
-  margin-top:20rpx; 
-  width: 90%;
-  margin-left: 5%;
-  color: white
+  height:540rpx;
 }
 .tr {
   display: flex;
   width: 100%;
   justify-content: center;
-  height: 3rem;
+  height: 90rpx;
   align-items: center;
 }
 .wd10{
@@ -62,17 +70,29 @@
     white-space:nowrap;
     overflow:hidden;
 }
+/*
 .bg-w{
-  background: rgb(115,17,111);
+  border: outset rgb(108,34,105);
+  border-width: 0.5rpx 0 0.5rpx 0;
 }
 .bg-g{
-  background: rgb(99, 6, 95);
+  border: outset rgb(108,34,105);
+  border-width: 0.5rpx 0 0.5rpx 0;
 }
-
+*/
+.bg{
+  border: solid gainsboro;
+  border-width: 0.5rpx 0 0 0;
+}
+.bg-last{
+  border: solid gainsboro;
+  border-width: 0.5rpx 0 0.5rpx 0;
+}
 .avatar{
-  width: 60rpx;
-  height: 60rpx;
+  width: 50rpx;
+  height: 50rpx;
   border-radius: 50%;
+  border: 2rpx solid rgb(249,192,61);
   float: left
 }
 

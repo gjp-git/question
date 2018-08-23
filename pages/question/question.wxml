@@ -4,6 +4,10 @@
 <view class="userinfo">
     <template is="userRank" data="{{...item}}"/>
 </view>
+<view>
+   <image class='background' mode="widthFix" src="{{imgs['background']}}"></image>
+</view>
+
 <view class="container content">
   <view class='timerPanel'>
     <image class='timer' src="{{timerUrl}}"></image>
@@ -12,12 +16,14 @@
       <text wx:if="{{finishFlag&&!submit}}" style="display: block;">Time Out</text>
     </view>
   </view>
+  
   <view class='typeText'>
+    <image class='typeImg' mode="widthFix" src="{{imgs['type']}}"></image>
     <text>{{(question.type=='Single')?'单选题':'多选题'}} -- 难度：{{question.difficulty=='easy'?'简单':(question.difficulty=='normal'?'中等':'困难')}}</text>
   </view>
   <view class='questionText'>
     <text class='questionDesc'>{{question.questionDescription}}</text>
-    <view wx:if="{{question.type=='Multiple'}}">
+    <view class="radioList" wx:if="{{question.type=='Multiple'}}">
       <view class="radio" wx:for="{{question.choices}}" wx:key="value" >
         <label>
           <image wx:if="{{finishFlag}}" class='sign' src="{{item.flag =='choiceRed'?imgs['false']:(item.flag=='choiceGreen'?imgs['true']:'')}}"></image>
@@ -25,7 +31,7 @@
         </label>
       </view>
     </view>
-    <view wx:elif="{{question.type=='Single'}}">
+    <view class="radioList" wx:elif="{{question.type=='Single'}}">
       <view class="radio" wx:for="{{question.choices}}" wx:key="value">
         <label>
           <image wx:if="{{finishFlag}}" class='sign' src="{{item.flag =='choiceRed'?imgs['false']:(item.flag=='choiceGreen'?imgs['true']:'')}}"></image>
@@ -38,7 +44,7 @@
   <button wx:if="{{!finishFlag}}" class="buttonType" bindtap="submit">提交</button>
   <button wx:if="{{finishFlag}}" class="nextButtonType" bindtap="nextQuestion">下一题</button>
   <!--image class='result' wx:if="{{finishFlag}}" src="https://54.gmair.net/material/{{right?'zhengque':'cuowu'}}.png"></image-->
-  <view style='height:135rpx'></view>
+  <view style='height:200rpx'></view>
 </view>
 
 <template is="footer" />

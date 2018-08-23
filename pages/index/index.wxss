@@ -1,28 +1,42 @@
 /**index.wxss**/
 @import "/pages/template/template.wxss";
 @import "/pages/footer/footer.wxss";
+page{
+  background-color: rgb(108,34,105);
+}
+.background{
+  width: 95%;
+  position: absolute;
+  top:380rpx;
+  transform: translateX(-50%);
+  left: 50%
+}
 .content{
   margin: auto;
 }
-.studyImg{
-  width:164rpx;
-  height:93rpx;
-  margin-left: 15rpx;
-  margin-right: 15rpx;
-  position: relative;
-  top:12rpx;
+.titleImg{
+  width: 80%;
+  position: relative; 
+  transform: translateX(-50%);
+  left: 50%
 }
-.titlePanel{
+.loadPanel{
   font-size: 70rpx;
-  color: rgb(115,17,111);
-  text-align: center
+  position: relative;
+  color: rgb(249,192,61);
+  text-align: center;
+  width: 500rpx;
+  transform: translateX(-50%);
+  left: 50%
 }
 .buttonType {
   width: 500rpx;
-  background-color: rgb(115,17,111);
-  color: white;
+  font-size:30rpx;
+  background-color: rgb(249,192,61);
+  color: rgb(108,34,105);
+  box-shadow: 4rpx 4rpx 2rpx #888888;
+  border-radius:25rpx;
   margin-bottom:20rpx;
-  border:  0px solid rgb(115,17,111);
 }
 .indexImg{
   width:450rpx;
@@ -37,21 +51,23 @@
   height: 540rpx;
 }
 .logoPanel{
-  position: absolute;
-  bottom: 165rpx;
-  right: 50rpx;
+  bottom: 140rpx;
+  position: absolute; 
+  transform: translateX(-50%);
+  left: 50%
 }
 .msgbox{
   position: absolute;
-  bottom: 180rpx;
+  bottom: 150rpx;
   left: 50rpx;
   height:64rpx;
   width:100rpx;
 }
 
 .logo{
-  height:100rpx;
-  width:100rpx;
+  height:90rpx;
+  width:90rpx;
+  margin:5rpx;
 }
 
 .loadView{
@@ -60,14 +76,14 @@
 .introduceText{
   margin-top:25rpx;
   font-size: 35rpx;
-  color:rgb(115,17,111);
+  color:rgb(249,192,61);
   width: 100%;
   text-align: center
 }
 .infoText{
   margin-top:10rpx;
   font-size: 28rpx;
-  color: gray;
+  color: white;
   width: 100%;
   text-align: center
 }

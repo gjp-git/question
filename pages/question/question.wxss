@@ -1,13 +1,25 @@
 /* pages/question/question.wxss */
 @import "/pages/template/template.wxss";
 @import "/pages/footer/footer.wxss";
+page{
+  background-color: rgb(108,34,105);
+}
+.background{
+  width: 95%;
+  position: absolute;
+  top:100rpx;
+  transform: translateX(-50%);
+  left: 50%;
+  z-index: -9
+}
 .timerPanel{
   text-align: center
 }
 .timerText{
   height: 50rpx;
   font-size: 30rpx;
-  color: red;
+  
+  color: rgb(249,192,61);
 }
 .timer{
   height:100rpx;
@@ -19,30 +31,50 @@
   width:600rpx;
 }
 .typeText{
-  margin-top: 20rpx;
-  font-size: 30rpx;
+  font-size: 36rpx;
+  text-align: center;
+  color: rgb(108,34,105);
 }
+
+.typeImg{
+  width: 70%;
+  position: absolute; 
+  transform: translateX(-50%);
+  left: 50%;
+  z-index: -1
+}
+
 .questionText{
   margin-top: 20rpx;
+  color: white;
 }
 
 .questionDesc {
   font-size: 33rpx;
 }
-
+.radioList{
+  position: relative;
+  margin-top: 60rpx;
+}
 .buttonType {
+  position: relative;
   width: 500rpx;
-  background-color: rgb(115,17,111);
-  color: white;
-  margin-top:20rpx;
-  border:  0px solid rgb(115,17,111);
+  font-size:30rpx;
+  background-color: rgb(249,192,61);
+  color: rgb(108,34,105);
+  box-shadow: 4rpx 4rpx 2rpx #888888;
+  border-radius:25rpx;
+  margin-top:50rpx;
 }
 .nextButtonType {
+  position: relative;
   width: 500rpx;
-  background-color: rgb(99, 6, 95);
-  color: white;
-  margin-top:20rpx;
-  border:  0px solid rgb(99, 6, 95);
+  font-size:30rpx;
+  background-color: rgb(249,192,61);
+  color: rgb(108,34,105);
+  box-shadow: 4rpx 4rpx 2rpx #888888;
+  border-radius:25rpx;
+  margin-top:50rpx;
 }
 
 
@@ -53,30 +85,29 @@
 }
 
 .choicesButton {
+  position: relative;
   width: 500rpx;
-  background-color: white;
-  border: 0;
-  margin-top: 15rpx;
-  border-radius:15% / 40%;
-  font-size: 28rpx;
-  color: rgb(0,117,193);
-  box-shadow: 2rpx 2rpx 1rpx rgb(0,117,193);
+  font-size:30rpx;
+  background-color: rgb(143,130,188);
+  color: rgb(108,34,105);
+  box-shadow: 4rpx 4rpx 2rpx #888888;
+  border-radius:25rpx;
+  margin-top:20rpx;
 }
 
 .selected{
-  background-color: rgb(115,17,111);
-  color: white
+  background-color: rgb(249,192,61);
 }
 .radio{
   position:relative;
 }
 .sign{
   position: absolute;
-  left:-45rpx;
+  left:-25rpx;
   top: 50%;
   transform: translateY(-50%);
-  height: 100rpx;
-  width:100rpx;
+  height: 60rpx;
+  width:60rpx;
 }
 
 .result{
@@ -89,4 +120,3 @@
   left: 50%;
   opacity:0.75;
 }
-

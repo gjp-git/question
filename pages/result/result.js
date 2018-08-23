@@ -9,7 +9,7 @@ Page({
   data: {
     score: app.globalData.score,
     userInfo: null,
-    scale: 1.39,
+    scale: 1.57,
     showModalStatus: false,
     lastRank:1,
     lastStar:1,
@@ -119,8 +119,8 @@ Page({
     var that = this
     wx.getSystemInfo({
       success: function (res) {
-        //console.log(res.windowWidth)
-        //console.log(res.windowHeight)
+        console.log(res.windowWidth)
+        console.log(res.windowHeight)
         that.data.windowWidth = res.windowWidth
         that.data.windowHeight = res.windowHeight
       }
@@ -138,7 +138,7 @@ Page({
     var arrow = that.data.imgs['arrow']
     var beforeStarPath = that.data.imgs[that.data.lastStar+'star']
     var afterStarPath = that.data.imgs[that.data.userStar + 'star']
-    var windowWidth = that.data.windowWidth - 20
+    var windowWidth = that.data.windowWidth*633/750
     var windowHeight = that.data.windowHeight
     var scale = that.data.scale
     //绘制背景图片
@@ -148,32 +148,40 @@ Page({
     //绘制头像
     ctx.save()
     ctx.beginPath()
+    ctx.arc(windowWidth / 2, 0.56 * windowWidth, 0.15 * windowWidth, 0, 2 * Math.PI)
+    ctx.clip()
+    ctx.drawImage(portraitPath, 0.35 * windowWidth, 0.41 * windowWidth, 0.3 * windowWidth, 0.3 * windowWidth)
+    ctx.restore()
+/*
     ctx.arc(windowWidth / 2, 0.3 * windowWidth, 0.15 * windowWidth, 0, 2 * Math.PI)
     ctx.clip()
     ctx.drawImage(portraitPath, 0.7 * windowWidth / 2, 0.15 * windowWidth, 0.3 * windowWidth, 0.3 * windowWidth)
     ctx.restore()
-
     ctx.drawImage(beforeRankPath, 0.2 * windowWidth, 0.75 * windowWidth, 0.2 * windowWidth, 0.2 * windowWidth)
     ctx.drawImage(beforeStarPath, 0.4 * windowWidth, 0.8 * windowWidth, 0.5 * windowWidth, 0.1 * windowWidth)
     ctx.drawImage(arrow, 0.475 * windowWidth, 0.95 * windowWidth, 0.1 * windowWidth, 0.075 * windowWidth)
     ctx.drawImage(afterRankPath, 0.2 * windowWidth, 1.05 * windowWidth, 0.2 * windowWidth, 0.2 * windowWidth)
     ctx.drawImage(afterStarPath, 0.4 * windowWidth, 1.1 * windowWidth, 0.5 * windowWidth, 0.1 * windowWidth)
-
+*/
 
     //绘制第一段文本
-    ctx.setFillStyle('#ff0000')
+    ctx.setFillStyle('rgb(108,34,105)')
     ctx.setFontSize(0.05 * windowWidth)
     ctx.setTextAlign('center')
-    ctx.fillText(hostNickname + ' 在学习新思想答题挑战中', windowWidth / 2, 0.55* windowWidth)
-    ctx.setFillStyle('#ff0000')
+    ctx.fillText(hostNickname + ' 在学习新思想答题挑战中', windowWidth / 2, 0.8* windowWidth)
+    ctx.setFillStyle('rgb(108,34,105)')
     ctx.setFontSize(0.05 * windowWidth)
     ctx.setTextAlign('center')
-    ctx.fillText('成长为 ' + this.data.fish[app.globalData.userRank-1] + '小蓝鲸', windowWidth / 2, 0.65 * windowWidth)
+    ctx.fillText('成长为 ' + this.data.fish[app.globalData.userRank-1] + '小蓝鲸', windowWidth / 2, 0.87 * windowWidth)
     //绘制第二段文本
-    ctx.setFillStyle('#ff0000')
+    ctx.setFillStyle('rgb(108,34,105)')
     ctx.setFontSize(0.05 * windowWidth)
     ctx.setTextAlign('center')
-    ctx.fillText('快来解锁你的小蓝鲸吧！', windowWidth / 2, 0.75 * windowWidth)
+    ctx.fillText('快来解锁你的小蓝鲸吧！', windowWidth / 2, 0.94 * windowWidth)
+
+    ctx.drawImage(afterRankPath, 0.1 * windowWidth, 0.9 * windowWidth, 0.8 * windowWidth, 0.8 * windowWidth)
+
+
     ctx.draw();
     console.log('draw')
   },

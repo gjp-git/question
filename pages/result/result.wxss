@@ -1,5 +1,8 @@
 /* pages/result/result.wxss */
 @import "/pages/footer/footer.wxss";
+page{
+  background-color: rgb(108,34,105);
+}
 .center{
   text-align:center;
 }
@@ -28,7 +31,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  width: 720rpx;
+  width: 633rpx;
   height: 1000rpx;
   z-index: -99;
 }
@@ -39,27 +42,29 @@
   left: 0;
   right: 0;
   bottom: 0;
-  width: 720rpx;
+  width: 633rpx;
   height: 1000rpx;
 }
 .buttonType {
   position:absolute;
   width: 250rpx;
-  background-color: rgb(115,17,111);
-  color: white;
-  font-size: 30rpx;
-  border:  0px solid rgb(115,17,111);
+  font-size:30rpx;
+  background-color: rgb(249,192,61);
+  color: rgb(108,34,105);
+  box-shadow: 4rpx 4rpx 2rpx #888888;
+  border-radius:25rpx;
   top:1150rpx;
+  margin-bottom: 50rpx;
   left:50%;
   transform: translate(-50%)
 }
 
 .canvas-box{
-  width: 720rpx;
+  width: 633rpx;
   height: 1000rpx;
-  position: fixed;
-  left: 25rpx;
-  top: 150rpx;
+  position: relative;
+  left: 58.5rpx;
+  top: 120rpx;
 }
 
 /*button*/

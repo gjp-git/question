@@ -8,6 +8,7 @@
   width: 100rpx;
   height: 100rpx;
   border-radius: 50%;
+  border:5rpx solid rgb(249,192,61);
 }
 .rank{
   width: 100rpx;

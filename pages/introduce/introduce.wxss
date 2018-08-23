@@ -1,20 +1,28 @@
 /* pages/introduce/introduce.wxss */
+page{
+  background-color: rgb(108,34,105);
+}
 .title{
   margin-top:100rpx;
   width: 100%;
   text-align: center;
-  color:rgb(115,17,111);
+  color:white;
+  font-weight: bold;
 }
 .introduce{
   width:80%;
   font-size: 28rpx;
   margin-left:10%;
   margin-bottom: 50rpx;
+  color: white 
 }
 .buttonType {
+  position: relative;
   width: 500rpx;
-  background-color: rgb(115,17,111);
-  color: white;
-  margin-bottom:100rpx;
-  border:  0px solid rgb(115,17,111);
+  font-size:30rpx;
+  background-color: rgb(249,192,61);
+  color: rgb(108,34,105);
+  box-shadow: 4rpx 4rpx 2rpx #888888;
+  border-radius:25rpx;
+  margin-bottom: 50rpx;
 }
