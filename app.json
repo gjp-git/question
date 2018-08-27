@@ -5,7 +5,8 @@
     "pages/rank/rank",
     "pages/result/result",
     "pages/footer/footer",
-    "pages/introduce/introduce"
+    "pages/introduce/introduce",
+    "pages/share/share"
   ],
   "window": {
     "navigationStyle": "custom"

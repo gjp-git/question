@@ -45,18 +45,31 @@ page{
   width: 633rpx;
   height: 1000rpx;
 }
+.buttonPanel{
+  position: relative;
+  width: 490rpx;
+  height: 100rpx;
+  left:50%;
+  transform: translate(-50%);
+  top:150rpx;
+}
 .buttonType {
-  position:absolute;
-  width: 250rpx;
+  width: 220rpx;
   font-size:30rpx;
   background-color: rgb(249,192,61);
   color: rgb(108,34,105);
   box-shadow: 4rpx 4rpx 2rpx #888888;
   border-radius:25rpx;
-  top:1150rpx;
-  margin-bottom: 50rpx;
-  left:50%;
-  transform: translate(-50%)
+  display:inline-block;
+  margin-right:12.5rpx;
+  margin-left:12.5rpx;
+
+}
+.image-box{
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 999999rpx;
 }
 
 .canvas-box{

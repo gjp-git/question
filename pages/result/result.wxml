@@ -1,9 +1,16 @@
 <!--pages/result/result.wxml-->
-
-<import src="../footer/footer.wxml"/>
+<import src="../footer/footer.wxml" />
 <image class="backButton" src="{{imgs['back']}}" bindtap="back"></image>
-<button class="buttonType" open-type="share">点击分享</button>
+
+
 <view class="canvas-box">
-      <canvas canvas-id="myCanvas" style='width:633rpx;height:1000rpx;'></canvas>
+  <canvas canvas-id="myCanvas" style='width:633rpx;height:1000rpx;'></canvas>
+</view>
+<view class="image-box">
+  <canvas canvas-id="myImage" style='width:800rpx;height:1401rpx;'></canvas>
+</view>
+<view  class="buttonPanel">
+  <button class="buttonType" open-type="share">立刻分享</button>
+  <button class="buttonType" bindtap="saveAndShare">保存分享图</button>
 </view>
 <!--template is="footer" /-->

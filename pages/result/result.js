@@ -16,9 +16,10 @@ Page({
     userRank: 1,
     userStar: 1,
     fish: ['宝宝', '少年', '青春', '励志', '榜样'],
-    imgs: app.globalData.imgs
+    imgs: app.globalData.imgs,
+    qrcode: "https://54.gmair.net/material/qrcode_smallapp.jpg"
   },
-
+  //
   /**
    * 生命周期函数--监听页面加载
    */
@@ -35,18 +36,17 @@ Page({
     wx.downloadFile({
       url: app.globalData.userInfo.avatarUrl,
       success: function (res1) {
-
         //缓存头像图片
         that.setData({
           portrait_temp: res1.tempFilePath
         })
-        that.drawImage()
+        that.drawResult()
         wx.hideLoading()
-        setTimeout(function () {
-          that.canvasToImage()
-        }, 200)
+       
       }
     })
+
+   
     
   },
 
@@ -115,7 +115,7 @@ Page({
   share: function () {
     this.onShareAppMessage()
   },
-  drawImage() {
+  drawResult() {
     var that = this
     wx.getSystemInfo({
       success: function (res) {
@@ -152,17 +152,7 @@ Page({
     ctx.clip()
     ctx.drawImage(portraitPath, 0.35 * windowWidth, 0.41 * windowWidth, 0.3 * windowWidth, 0.3 * windowWidth)
     ctx.restore()
-/*
-    ctx.arc(windowWidth / 2, 0.3 * windowWidth, 0.15 * windowWidth, 0, 2 * Math.PI)
-    ctx.clip()
-    ctx.drawImage(portraitPath, 0.7 * windowWidth / 2, 0.15 * windowWidth, 0.3 * windowWidth, 0.3 * windowWidth)
-    ctx.restore()
-    ctx.drawImage(beforeRankPath, 0.2 * windowWidth, 0.75 * windowWidth, 0.2 * windowWidth, 0.2 * windowWidth)
-    ctx.drawImage(beforeStarPath, 0.4 * windowWidth, 0.8 * windowWidth, 0.5 * windowWidth, 0.1 * windowWidth)
-    ctx.drawImage(arrow, 0.475 * windowWidth, 0.95 * windowWidth, 0.1 * windowWidth, 0.075 * windowWidth)
-    ctx.drawImage(afterRankPath, 0.2 * windowWidth, 1.05 * windowWidth, 0.2 * windowWidth, 0.2 * windowWidth)
-    ctx.drawImage(afterStarPath, 0.4 * windowWidth, 1.1 * windowWidth, 0.5 * windowWidth, 0.1 * windowWidth)
-*/
+
 
     //绘制第一段文本
     ctx.setFillStyle('rgb(108,34,105)')
@@ -185,26 +175,90 @@ Page({
     ctx.draw();
     console.log('draw')
   },
+  saveAndShare(){
+    console.log('aaa')
+    var that = this
+    
+    
+    wx.downloadFile({
+      url: that.data.qrcode,
+      success: function (res2) {
+        console.log('二维码：' + res2.tempFilePath)
+        //缓存二维码
+        that.setData({
+          qrcode_temp: res2.tempFilePath
+        })
+        console.log('开始绘制图片')
+        that.drawImage();
+        wx.hideLoading();
+        setTimeout(function () {
+          that.canvasToImage()
+        }, 200)
+      }
+    })
+    
+  },
+
+  drawImage() {
+    //绘制canvas图片
+    var that = this
+    const ctx = wx.createCanvasContext('myImage')
+    var bgPath = '../image/scoreBG.jpg'
+    var portraitPath = that.data.portrait_temp
+    var qrcodePath = that.data.qrcode_temp
+    var title = that.data.fish[app.globalData.userRank - 1] + '小蓝鲸'
+    var kun = that.data.imgs['kun' + that.data.lastRank]
+    var hostNickname = app.globalData.userInfo.nickName
+    var windowWidth = that.data.windowWidth
+   
+    //绘制背景图片
+    ctx.drawImage(bgPath, 0, 0, windowWidth, windowWidth /800*1401)
+
+    //绘制头像
+    ctx.save()
+    ctx.beginPath()
+    ctx.arc(windowWidth / 2, 0.32 * windowWidth, 0.1 * windowWidth, 0, 2 * Math.PI)
+    ctx.clip()
+    ctx.drawImage(portraitPath, 0.8 * windowWidth / 2, 0.22 * windowWidth, 0.2 * windowWidth, 0.2 * windowWidth)
+    ctx.restore()
+    //绘制小蓝鲸
+    ctx.setFillStyle('#ffffff')
+    ctx.setFontSize(0.07 * windowWidth)
+    ctx.setTextAlign('center')
+    ctx.fillText(title, windowWidth / 2, 0.63 * windowWidth)
+    //绘制小蓝鲸
+    ctx.drawImage(kun, 0.2 * windowWidth, 0.7 * windowWidth, 0.6 * windowWidth, 0.6 * windowWidth)
+    //绘制二维码
+    ctx.drawImage(qrcodePath, 0.68 * windowWidth / 2, 1.4 * windowWidth, 0.32 * windowWidth, 0.32 * windowWidth)
+    ctx.draw();
+  },
   canvasToImage() {
     var that = this
     var width = that.data.windowWidth
     wx.canvasToTempFilePath({
       x: 0,
       y: 0,
-      width: width - 20,
-      height: (width - 20) * that.data.scale,
-      destWidth: that.data.windowWidth,
-      destHeight: that.data.windowWidth * that.data.scale,
-      canvasId: 'myCanvas',
+      width: width,
+      height: width /800*1401,
+      destWidth: that.data.windowWidth-50,
+      destHeight: (that.data.windowWidth-50) / 800 * 1401,
+      canvasId: 'myImage',
       success: function (res) {
         console.log('朋友圈分享图生成成功:' + res.tempFilePath)
         that.setData({
           tempFilePath: res.tempFilePath
         })
-        /*wx.previewImage({
+        /*
+        wx.previewImage({
           current: res.tempFilePath, // 当前显示图片的http链接
           urls: [res.tempFilePath] // 需要预览的图片http链接列表
         })*/
+        wx.saveImageToPhotosAlbum({
+          filePath: res.tempFilePath,
+          success(res) {
+            console.log("保存成功")
+          }
+        })
       },
       fail: function (err) {
         console.log('失败')

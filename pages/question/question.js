@@ -177,9 +177,14 @@ Page({
           }
           app.globalData.userStar = res.data.resultMsg.star
           app.globalData.score = that.data.score
+          /*wx.redirectTo({
+            url: '../share/share'
+          })
+          */
           wx.redirectTo({
             url: '../result/result'
           })
+          
         }
         else {
           wx.showModal({
