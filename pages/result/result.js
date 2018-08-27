@@ -176,26 +176,41 @@ Page({
     console.log('draw')
   },
   saveAndShare(){
-    console.log('aaa')
     var that = this
-    
-    
+    wx.showLoading(
+      {
+        title: "生成图片中",
+        mask: true
+      }
+    )
     wx.downloadFile({
-      url: that.data.qrcode,
-      success: function (res2) {
-        console.log('二维码：' + res2.tempFilePath)
-        //缓存二维码
+      url: that.data.imgs['scoreBG'],
+      success: function (res1) {
+        console.log('缓存背景图：' + res1.tempFilePath)
+        //缓存背景图
         that.setData({
-          qrcode_temp: res2.tempFilePath
+          bg_temp: res1.tempFilePath
         })
-        console.log('开始绘制图片')
-        that.drawImage();
-        wx.hideLoading();
-        setTimeout(function () {
-          that.canvasToImage()
-        }, 200)
+        wx.downloadFile({
+          url: that.data.qrcode,
+          success: function (res2) {
+            console.log('二维码：' + res2.tempFilePath)
+            //缓存二维码
+            that.setData({
+              qrcode_temp: res2.tempFilePath
+            })
+            console.log('开始绘制图片')
+            that.drawImage();
+            setTimeout(function () {
+              wx.hideLoading()
+              that.canvasToImage()
+            }, 200)
+          }
+        })
       }
     })
+    
+    
     
   },
 
@@ -203,7 +218,7 @@ Page({
     //绘制canvas图片
     var that = this
     const ctx = wx.createCanvasContext('myImage')
-    var bgPath = that.data.imgs['scoreBG']
+    var bgPath = that.data.bg_temp
     var portraitPath = that.data.portrait_temp
     var qrcodePath = that.data.qrcode_temp
     var title = that.data.fish[app.globalData.userRank - 1] + '小蓝鲸'
