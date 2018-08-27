@@ -130,7 +130,7 @@ Page({
 
 
     const ctx = wx.createCanvasContext('myCanvas')
-    var bgPath = "../image/score.png"
+    var bgPath = that.data.imgs['score']
     var portraitPath = that.data.portrait_temp
     var hostNickname = app.globalData.userInfo.nickName
     var beforeRankPath = that.data.imgs['kun' + that.data.lastRank]
@@ -203,7 +203,7 @@ Page({
     //绘制canvas图片
     var that = this
     const ctx = wx.createCanvasContext('myImage')
-    var bgPath = '../image/scoreBG.jpg'
+    var bgPath = that.data.imgs['scoreBG']
     var portraitPath = that.data.portrait_temp
     var qrcodePath = that.data.qrcode_temp
     var title = that.data.fish[app.globalData.userRank - 1] + '小蓝鲸'

@@ -346,8 +346,7 @@ App({
       "false": 'https://54.gmair.net/material/false.png',
       "study": "../image/study.png",
       "arrow": 'https://54.gmair.net/material/arrow.png',
-      "scoreBG":"../image/scoreBG.jpg",
-      "scoreContent":"../image/scoreContent.png"
+      "scoreBG":"https://54.gmair.net/material/scoreBG.jpg"
     },
    
     questions: [
